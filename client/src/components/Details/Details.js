@@ -453,6 +453,10 @@ class Details extends Component {
 	    this.setState({currTab: i});
 	}
 
+	numberWithCommas(x) {
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+
   render() {
   		if(this.state.comparasion){
   			return (
@@ -505,7 +509,7 @@ class Details extends Component {
 							<Link to={url} onClick={this.saveHistory}>{item.cohort_name}</Link>
 						</td>
 						<td><Link to={url} onClick={this.saveHistory}>{item.cohort_acronym}</Link></td>
-						<td>{item.race_total_total > -1 ? item.race_total_total : 0}</td>
+						<td align="center">{item.race_total_total > -1 ? this.numberWithCommas(item.race_total_total) : 0}</td>
 						<td>{website_content}</td>
 						<td><Moment format="MM/DD/YYYY">{item.update_time}</Moment></td>
 					</tr>
@@ -600,8 +604,8 @@ class Details extends Component {
 									<tr id="summaryHeader" className="col-header">
 										{this.renderSelectHeader("5%")}
 										{this.renderTableHeader("cohort_name","30%")}
-										{this.renderTableHeader("cohort_acronym","15%")}
-										{this.renderTableHeader("race_total_total","15%")}
+										{this.renderTableHeader("cohort_acronym","10%")}
+										{this.renderTableHeader("race_total_total","20%")}
 										<th className="sortable" width="20%" scope="col">
 											<a href="javascript:void(0);" style={{cursor:'default'}}>Website
 											</a>

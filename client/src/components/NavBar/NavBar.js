@@ -20,6 +20,7 @@ class NavBar extends Component {
         {this.renderTab(3)}
         {this.renderTab(4)}
         {this.renderTab(5)}
+        {this.renderTab(6)}
         <TourBox currTab={this.props.currTab}/>
       </ul>
     );
