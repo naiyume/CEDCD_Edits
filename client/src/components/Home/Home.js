@@ -205,69 +205,27 @@ class Home extends Component {
       return (
 		<div>
 			<input id="tourable" type="hidden" />
-			<p className="welcome">Welcome! Below is the list of cohorts participating in the Cancer Epidemiology Descriptive Cohort Database (CEDCD). Search for a cohort by name or select a cohort to view a brief description and contact information. If you want to know more about one or more cohorts, select one of the options from the menu at the top.
-			</p>
-			<div id="cedcd-home-filter" className="home col-md-12">
-			  <div className="search-wrapper col-md-12">
-			  	<span className="searchField">
-			    	<input name="inKeyword" type="text" aria-label="keyword" value={this.state.searchString} onChange={this.changeText} id="inKeyword" placeholder="Search for Cohorts by name or acronym" onKeyPress={this.handleKeyPress}></input>
-			    </span>
-			    <span className="searchBttn">
-			    	<a id="btKeyword" href='javascript:void(0);' onClick={this.toSearch}>
-			    		<div className="searchIcon">
-			    			&#9906;
-			    		</div>
-			    	</a>
-			    </span>
-			  </div>
+			<h2>What the CEDCD is and its purpose</h2>
+            <p>The Cancer Epidemiology Descriptive Cohort Database (CEDCD) contains descriptive information about cohort studies that follow groups of persons over time for cancer incidence, mortality, and other health outcomes.   The CEDCD is a searchable database that contains general study information (e.g., eligibility criteria and size), the type of data collected at baseline, cancer sites, number of participants diagnosed with cancer, and biospecimen information. All data included in this database are aggregated for each cohort; there are no individual level data. The goal of the CEDCD is to facilitate collaboration and highlight the opportunities for research within existing cohort studies.</p>
+			<div class="row-for-home-grid">
+				<div class="column-for-home-grid">
+					<h2 align = "center"><Link to={"select"}  onClick={this.props.onClick}>Search Cohorts</Link></h2>
+					<p align = "center">Description for the search cohorts tool.</p>
+				</div>
+				<div class="column-for-home-grid">
+					<h2 align = "center"><Link to={"enrollment"}  onClick={this.props.onClick}>Enrollment Counts</Link></h2>
+					<p align = "center">Description for the enrollment counts tool.</p>
+				</div>
 			</div>
-			<div id="cedcd-home-cohorts" className="home col-md-12">
-			  <div id="cedcd-home-cohorts-inner" className="col-md-12">
-			    <div className="table-inner col-md-12">
-			      <div className="tableTopMatter row">
-			        <div id="tableControls" className="col-md-6">
-			          <ul className="table-controls">
-			          	<PageSummary pageInfo={this.state.pageInfo} />
-			          </ul>
-			        </div>
-			        <div id="tableExport" className="col-md-2 col-md-offset-4">
-			        	<Workbook dataSource={this.loadingData} element={<a id="exportTblBtn" href="javascript:void(0);">Export Table <i className="fas fa-file-export"></i></a>}>
-					      <Workbook.Sheet name="Cohort_Selection">
-					        <Workbook.Column label="Cohort Name" value="cohort_name"/>
-					        <Workbook.Column label="Cohort Acronym" value="cohort_acronym"/>
-					        <Workbook.Column label="Website" value="cohort_web_site"/>
-					        <Workbook.Column label="Last Updated" value="update_time"/>
-					      </Workbook.Sheet>
-					      <Workbook.Sheet name="Criteria">
-					      </Workbook.Sheet>
-					    </Workbook>
-		              
-		            </div>
-			      </div>
-		          <div className="clearFix"></div>
-		          <div className="cedcd-table home">
-			        <div>
-						<table cellSpacing="0" cellPadding="5" useaccessibleheaders="true" showheaders="true" id="summaryGridView" >
-							<thead>
-								<tr id="summaryHeader" className="col-header">
-									{this.renderTableHeader("cohort_name","45%")}
-									{this.renderTableHeader("cohort_acronym","20%")}
-									<th className="sortable" width="20%" scope="col">
-										<a href="javascript:void(0);" style={{cursor:'default'}}>Website
-										</a>
-									</th>
-									{this.renderTableHeader("update_time","15%")}
-								</tr>
-							</thead>
-							<tbody>
-								{content}
-							</tbody>
-						</table>
-					</div>
-			      </div>
-			      <Paging pageInfo={this.state.pageInfo} onClick={(i) => this.gotoPage(i)}/>
-			    </div>
-			  </div>
+			<div class="row-for-home-grid">
+				<div class="column-for-home-grid">
+					<h2 align = "center"><Link to={"cancer"}  onClick={this.props.onClick}>Cancer Counts</Link></h2>
+					<p align = "center">Description for the cancer counts tool.</p>
+				</div>
+				<div class="column-for-home-grid">
+					<h2 align = "center"><Link to={"biospecimen"}  onClick={this.props.onClick}>Biospecimen Counts</Link></h2>
+					<p align = "center">Description for the biospecimen counts tool.</p>
+				</div>
 			</div>
 		</div>
       );
