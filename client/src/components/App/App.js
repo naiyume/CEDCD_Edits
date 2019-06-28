@@ -18,6 +18,11 @@ class App extends Component {
   }
 
   componentDidMount(){
+    this.updateTab();
+    window.onlocationchange = () => setTimeout(_ => this.updateTab(), 100);
+  }
+
+  updateTab(){
     let path = window.location.pathname;
     if(path.indexOf("/home") >= 0){
       setTimeout(() => {

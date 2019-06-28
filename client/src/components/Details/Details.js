@@ -18,6 +18,8 @@ import FloatingSubmit from './FloatingSubmit';
 import TabBoard from './TabBoard';
 import BoxBoard from './BoxBoard';
 import Workbook from '../Workbook/Workbook';
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
 
 class Details extends Component {
 
@@ -528,10 +530,14 @@ class Details extends Component {
 				<p className="welcome">Browse the list of cohorts or use the filter options to shorten the list of cohorts according to types of participants, data, and specimens.  Then select the cohorts about which you'd like to see details and select the Submit button.
 				</p>
 			  <div id="cedcd-home-filter" className="filter-block home col-md-12">
+				<Accordion defaultActiveKey="0">
 			    <div id="filter-panel" className="panel panel-default">
-			      <div className="panel-heading">
-			        <h2 className="panel-title">Variables Collected in Cohort Study</h2>
-			      </div>
+				  <Accordion.Toggle eventKey="0" color="black">
+					<div className="panel-heading">
+						<h2 className="panel-title">Variables Collected in Cohort Study</h2>
+					</div>
+				  </Accordion.Toggle>
+				  <Accordion.Collapse eventKey="0">
 			      <div className="panel-body">
 			        <div className="filter row">
 			          <div className="col-sm-6 filterCol">
@@ -572,7 +578,9 @@ class Details extends Component {
 			          </div>
 			        </div>
 			      </div>
+				  </Accordion.Collapse>
 			    </div>
+				</Accordion>
 			  </div>
 			  <div id="cedcd-home-cohorts" className="home col-md-12">
 			    <div id="cedcd-home-cohorts-inner" className="col-md-12">

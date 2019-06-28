@@ -207,24 +207,46 @@ class Home extends Component {
 			<input id="tourable" type="hidden" />
 			<h2>What the CEDCD is and its purpose</h2>
             <p>The Cancer Epidemiology Descriptive Cohort Database (CEDCD) contains descriptive information about cohort studies that follow groups of persons over time for cancer incidence, mortality, and other health outcomes.   The CEDCD is a searchable database that contains general study information (e.g., eligibility criteria and size), the type of data collected at baseline, cancer sites, number of participants diagnosed with cancer, and biospecimen information. All data included in this database are aggregated for each cohort; there are no individual level data. The goal of the CEDCD is to facilitate collaboration and highlight the opportunities for research within existing cohort studies.</p>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous"></link>
 			<div class="row-for-home-grid">
 				<div class="column-for-home-grid">
-					<h2 align = "center"><Link to={"select"}  onClick={this.props.onClick}>Search Cohorts</Link></h2>
-					<p align = "center">Description for the search cohorts tool.</p>
+					<Link to={"select"} class="link-text"  onClick={_ => window.onlocationchange()}>
+						<div class="inner-card" align="center">
+							<img src="./assets/img/HomeCardPlaceholder.png" alt="Avatar" style={{width:"25%"}}></img>
+							<h2 align = "center" id = "ToolName1">Search Cohorts</h2>
+							<p align = "center">Description for the search cohorts tool.</p>
+						</div>
+					</Link>
 				</div>
 				<div class="column-for-home-grid">
-					<h2 align = "center"><Link to={"enrollment"}  onClick={this.props.onClick}>Enrollment Counts</Link></h2>
-					<p align = "center">Description for the enrollment counts tool.</p>
+					<Link to={"enrollment"} class="link-text"  onClick={this.props.onClick}>
+						<div class="inner-card" align="center">
+							<img src="./assets/img/HomeCardPlaceholder.png" alt="Avatar" style={{width:"25%"}}></img>
+							<h2 align = "center">Enrollment Counts</h2>
+							<p align = "center">Description for the enrollment counts tool.</p>
+						</div>
+					</Link>
 				</div>
+				
 			</div>
 			<div class="row-for-home-grid">
 				<div class="column-for-home-grid">
-					<h2 align = "center"><Link to={"cancer"}  onClick={this.props.onClick}>Cancer Counts</Link></h2>
-					<p align = "center">Description for the cancer counts tool.</p>
+					<Link to={"cancer"} class="link-text"  onClick={this.props.onClick}>
+					<div class="inner-card" align="center">
+						<img src="./assets/img/HomeCardPlaceholder.png" alt="Avatar" style={{width:"25%"}}></img>
+						<h2 align = "center">Cancer Counts</h2>
+						<p align = "center">Description for the cancer counts tool.</p>
+					</div>
+					</Link>
 				</div>
 				<div class="column-for-home-grid">
-					<h2 align = "center"><Link to={"biospecimen"}  onClick={this.props.onClick}>Biospecimen Counts</Link></h2>
-					<p align = "center">Description for the biospecimen counts tool.</p>
+					<Link to={"biospecimen"} class="link-text"  onClick={this.props.onClick}>
+						<div class="inner-card" align="center">
+							<img src="./assets/img/HomeCardPlaceholder.png" alt="Avatar" style={{width:"25%"}}></img>
+							<h2 align = "center">Biospecimen Counts</h2>
+							<p align = "center">Description for the biospecimen counts tool.</p>
+						</div>
+					</Link>
 				</div>
 			</div>
 		</div>

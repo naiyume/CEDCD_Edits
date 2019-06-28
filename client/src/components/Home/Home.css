@@ -1,10 +1,69 @@
 .row-for-home-grid {
     display: flex;
+    flex:50%;
+    padding:0 150px;
 }
   
   /* Create two equal columns that sits next to each other */
 .column-for-home-grid {
     flex: 50%;
-    padding: 50px;
-    border: 1px solid #135B5D;
+    padding: 15px;
+    /*border: 1px solid #135B5D;*/
+}
+
+.inner-card{
+    border: 1px solid black;
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.inner-card:link{
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+}
+
+.inner-card:hover {
+    text-decoration: none;
+    box-shadow: 0 16px 20px 0 rgba(0,0,0,0.2);
+}
+img {
+    border-radius: 5px;
+}
+.container {
+    padding: 2px 16px;
+}
+
+a.link-text:link {
+    color:black;
+    text-decoration: none;
+}
+  
+a.link-text:visited {
+    color:black;
+    text-decoration: none;
+}
+  
+a.link-text:hover {
+    text-decoration: none;
+    color: black
+}
+  
+a.link-text:active {
+    text-decoration: none;
+    color: black;
+}
+
+.underline-style{
+    text-decoration:underline;
+}
+
+  
+img {
+    border-radius: 5px 5px 0 0;
+}
+  
+.container {
+    padding: 2px 16px;
 }
