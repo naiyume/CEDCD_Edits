@@ -22,7 +22,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import { Collapse} from 'reactstrap';
 
-class Details extends Component {
+class Testing extends Component {
 
 	constructor(props){
 		super(props);
@@ -644,4 +644,4 @@ class Details extends Component {
   		}
   }
 }
-export default Details;
+export default Testing;
