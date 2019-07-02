@@ -147,6 +147,7 @@ class Home extends Component {
 		}
 		
 	}
+	
 
 	saveHistory = () =>{
 		const state = Object.assign({}, this.state);
@@ -204,7 +205,6 @@ class Home extends Component {
   		
       return (
 		<div>
-			<input id="tourable" type="hidden" />
 			<h2 className="welcome" id="welcome-title">What the CEDCD is and its purpose</h2>
             <p className="welcome">The Cancer Epidemiology Descriptive Cohort Database (CEDCD) contains descriptive information about cohort studies that follow groups of persons over time for cancer incidence, mortality, and other health outcomes.   The CEDCD is a searchable database that contains general study information (e.g., eligibility criteria and size), the type of data collected at baseline, cancer sites, number of participants diagnosed with cancer, and biospecimen information. All data included in this database are aggregated for each cohort; there are no individual level data. The goal of the CEDCD is to facilitate collaboration and highlight the opportunities for research within existing cohort studies.</p>
 			<div className="row-for-home-grid">
