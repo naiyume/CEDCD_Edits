@@ -9,6 +9,7 @@ require('./config/express')(app);
 require('./routes')(app);
 
 //setup mysql connection
+console.log(config);
 mysql.connect(config.mysql, function(result){
 	if(result){
 		app.listen(config.port, function(){

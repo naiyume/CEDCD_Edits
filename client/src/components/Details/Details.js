@@ -595,7 +595,7 @@ class Details extends Component {
 			        <div className="tableTopMatter row">
 			          <div id="tableControls" className="col-md-6">
 			            <ul className="table-controls">
-			              <PageSummary pageInfo={this.state.pageInfo} />
+			              <PageSummary pageInfo={this.state.pageInfo}/>
 			            </ul>
 			          </div>
 			          <div id="tableExport" className="col-md-2 col-md-offset-4">
