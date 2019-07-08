@@ -211,7 +211,7 @@ class Home extends Component {
 				<div className="column-for-home-grid">
 					<Link to={"select"} className="link-text"  onClick={_ => window.onlocationchange()}>
 						<div className="inner-card" align="center">
-							<img src="./assets/img/HomeCardPlaceholder.png" alt="Avatar" style={{width:"25%"}}></img>
+							<img src="./assets/img/SearchImage.png" alt="Avatar" style={{width:"25%"}}></img>
 							<h2 align = "center" id = "ToolName1">Search Cohorts</h2>
 							<p align = "center">Description for the search cohorts tool.</p>
 						</div>
@@ -220,7 +220,7 @@ class Home extends Component {
 				<div className="column-for-home-grid">
 					<Link to={"enrollment"} className="link-text"  onClick={_ => window.onlocationchange()}>
 						<div className="inner-card" align="center">
-							<img src="./assets/img/HomeCardPlaceholder.png" alt="Avatar" style={{width:"25%"}}></img>
+							<img src="./assets/img/SearchImage.png" alt="Avatar" style={{width:"25%"}}></img>
 							<h2 align = "center">Enrollment Counts</h2>
 							<p align = "center">Description for the enrollment counts tool.</p>
 						</div>
@@ -232,7 +232,7 @@ class Home extends Component {
 				<div className="column-for-home-grid">
 					<Link to={"cancer"} className="link-text"  onClick={_ => window.onlocationchange()}>
 					<div className="inner-card" align="center">
-						<img src="./assets/img/HomeCardPlaceholder.png" alt="Avatar" style={{width:"25%"}}></img>
+						<img src="./assets/img/SearchImage.png" alt="Avatar" style={{width:"25%"}}></img>
 						<h2 align = "center">Cancer Counts</h2>
 						<p align = "center">Description for the cancer counts tool.</p>
 					</div>
@@ -241,7 +241,7 @@ class Home extends Component {
 				<div className="column-for-home-grid">
 					<Link to={"biospecimen"} className="link-text"  onClick={_ => window.onlocationchange()}>
 						<div className="inner-card" align="center">
-							<img src="./assets/img/HomeCardPlaceholder.png" alt="Avatar" style={{width:"25%"}}></img>
+							<img src="./assets/img/SearchImage.png" alt="Avatar" style={{width:"25%"}}></img>
 							<h2 align = "center">Biospecimen Counts</h2>
 							<p align = "center">Description for the biospecimen counts tool.</p>
 						</div>

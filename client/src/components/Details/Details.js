@@ -286,6 +286,9 @@ class Details extends Component {
 		this.setState({
 			filter:filter
 		});
+		console.log(filter.participant.ethnicity);
+		console.log(filter.participant.gender);
+		console.log(filter.participant.race);
 	}
 
 	handleAgeClick = (v) =>{
@@ -582,7 +585,7 @@ class Details extends Component {
 			        <div className="row">
 			          <div id="submitButtonContainer" className="col-sm-3 col-sm-offset-9">
 			            <a id="filterClear" className="btn-filter" href="javascript:void(0);" onClick={this.clearFilter}><i className="fas fa-times"></i> Clear All</a>
-			            <input type="submit" name="filterEngage" value="Search Cohorts" className="btn btn-primary btn-filter" onClick={this.toFilter}/>
+			            <input type="submit" id="filterEngage" name="filterEngage" value="Search Cohorts" className="btn btn-primary btn-filter" onClick={this.toFilter}/>
 			          </div>
 			        </div>
 			      </div>

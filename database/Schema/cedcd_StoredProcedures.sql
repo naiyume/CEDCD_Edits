@@ -354,13 +354,26 @@ BEGIN
     end if;
     
     set @query = concat("select sql_calc_found_rows cohort_id,cohort_name, cohort_acronym,cohort_web_site,update_time,race_total_total from cohort_summary where 1=1 ",@queryString,@orderBy,@paging);
-    PREPARE stmt FROM @query;
+	PREPARE stmt FROM @query;
 	EXECUTE stmt;
     select found_rows() as total;
 	DEALLOCATE PREPARE stmt;
 END //
 
+-- -----------------------------------------------------------------------------------------------------------
+-- Stored Procedure: my test advanced cohort_select
+-- -----------------------------------------------------------------------------------------------------------
+DROP PROCEDURE IF EXISTS `advanced_cohort_select` //
 
+CREATE PROCEDURE `advanced_cohort_select`(in q varchar(16000))
+BEGIN
+	set @query = q;
+	PREPARE stmt FROM @query;
+	EXECUTE stmt;
+    select found_rows() as total;
+	DEALLOCATE PREPARE stmt;
+
+END //
 -- -----------------------------------------------------------------------------------------------------------
 -- Stored Procedure: cohort_specimen_count
 -- -----------------------------------------------------------------------------------------------------------
