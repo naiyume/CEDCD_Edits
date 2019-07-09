@@ -203,12 +203,39 @@ class Details extends Component {
   createBoolean(index){
     const { booleanStates } = this.state;
     if(index > 0){
-      return <select value = {booleanStates[index]} onChange={e => this.handleBooleanChange(e,index)}>
+      return <select class="boolean-selector" value = {booleanStates[index]} onChange={e => this.handleBooleanChange(e,index)}>
         <option value="AND">AND</option>
         <option value="OR">OR</option>
       </select>
     }
-    return;
+    return <p class = "indent"></p>;
+  }
+
+  createSelector(index){
+	  if(index > 0){
+		return <select class="type-selector" value={this.state.items[index]} onChange={e => this.handleSelectChange(e,index)}>
+          <option value="Select" selected disabled hidden>-Select type-</option>
+          <option value="Gender">Gender</option>
+          <option value="Race">Race</option>
+          <option value="Ethnicity">Ethnicity</option>
+          <option value="Age">Age at Baseline</option>
+          <option value="State">Study Population</option>
+          <option value="Categories">Categories of Data Collected</option>
+          <option value="Biospecimen">Types of Biospecimens Collected</option>
+          <option value="Cancers">Cancers Collected</option>
+        </select>
+	  }
+	  return <select class="type-selector" value={this.state.items[index]} onChange={e => this.handleSelectChange(e,index)}>
+		<option value="Select" selected disabled hidden>-Select type-</option>
+	  	<option value="Gender">Gender</option>
+	  	<option value="Race">Race</option>
+	  	<option value="Ethnicity">Ethnicity</option>
+	  	<option value="Age">Age at Baseline</option>
+	  	<option value="State">Study Population</option>
+	  	<option value="Categories">Categories of Data Collected</option>
+	  	<option value="Biospecimen">Types of Biospecimens Collected</option>
+	  	<option value="Cancers">Cancers Collected</option>
+	  </select>
   }
 
   handleBooleanChange(e, index){
@@ -551,22 +578,14 @@ class Details extends Component {
         const { items, itemText } = this.state;
     const itemList = items.map((item, index) => (
       <div>
-        {this.createBoolean(index)}
-        <select value={this.state.items[index]} onChange={e => this.handleSelectChange(e,index)}>
-          <option value="Select" selected disabled hidden>-Select type-</option>
-          <option value="Gender">Gender</option>
-          <option value="Race">Race</option>
-          <option value="Ethnicity">Ethnicity</option>
-          <option value="Age">Age at Baseline</option>
-          <option value="State">Study Population</option>
-          <option value="Categories">Categories of Data Collected</option>
-          <option value="Biospecimen">Types of Biospecimens Collected</option>
-          <option value="Cancers">Cancers Collected</option>
-        </select>
-        <button onClick={e => this.addItem(index+1)}>
+
+		{this.createBoolean(index)}
+		{this.createSelector(index)}
+        
+        <button class="add-button"onClick={e => this.addItem(index+1)}>
           +
         </button>
-        <button onClick={e => this.removeItem(index)}>
+        <button class="remove-button" onClick={e => this.removeItem(index)}>
           &times;
         </button>
         {this.createSelectItems(index)}
