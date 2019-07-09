@@ -255,7 +255,7 @@ BEGIN
             elseif v = "20-24" then
 				set tmp = concat(tmp,"((enrollment_age_min >= 20 and enrollment_age_min <= 24) or (enrollment_age_max >= 20 and enrollment_age_max <= 24) or (enrollment_age_min <= 20 and enrollment_age_max >= 24))");
 			elseif v = "25-29" then
-				set tmp = concat(tmp,"((enrollment_age_min >= 15 and enrollment_age_min <= 29) or (enrollment_age_max >= 25 and enrollment_age_max <= 29) or (enrollment_age_min <= 25 and enrollment_age_max >= 29))");
+				set tmp = concat(tmp,"((enrollment_age_min >= 25 and enrollment_age_min <= 29) or (enrollment_age_max >= 25 and enrollment_age_max <= 29) or (enrollment_age_min <= 25 and enrollment_age_max >= 29))");
             elseif v = "30-34" then
 				set tmp = concat(tmp,"((enrollment_age_min >= 30 and enrollment_age_min <= 34) or (enrollment_age_max >= 30 and enrollment_age_max <= 34) or (enrollment_age_min <= 30 and enrollment_age_max >= 34))");
 			elseif v = "35-39" then
@@ -277,7 +277,7 @@ BEGIN
 			elseif v = "75-79" then
 				set tmp = concat(tmp,"((enrollment_age_min >= 75 and enrollment_age_min <= 79) or (enrollment_age_max >= 75 and enrollment_age_max <= 79) or (enrollment_age_min <= 75 and enrollment_age_max >= 79))");
 			elseif v = "80-85+" then
-				set tmp = concat(tmp,"enrollment_age_min >= 80");
+				set tmp = concat(tmp,"enrollment_age_max >= 80");
 			else
 				set tmp = "";
             end if;
