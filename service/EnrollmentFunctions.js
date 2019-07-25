@@ -1,13 +1,17 @@
 var config = require('../config');
 
 
-    function getEnrollmentStuff(gender, race, ethnicity){
+    function getEnrollmentInfo(gender, race, ethnicity){
         let column_info = [];
         let ethnicity_len = ethnicity.length;
         let race_len = race.length;
         let gender_len = gender.length;
+        console.log(config.gender);
+        console.log(config.race.length);
+        console.log(gender);
+        console.log(gender.length);
         if(ethnicity_len !== 0 || race_len !== 0 || gender_len !== 0){
-            if(ethnicity_len === config.ethnicity.length && race_len === config.race.length && gender_len === config.gender.length){
+            if((ethnicity_len === Object.keys(config.ethnicity).length || ethnicity_len === 0) && (race_len === Object.keys(config.race).length || race_len === 0) && (gender_len === Object.keys(config.gender).length || gender_len === 0)){
                 column_info.push("race_total_total");
             }
             else{
@@ -80,5 +84,5 @@ var config = require('../config');
     
 
 module.exports = {
-    getEnrollmentStuff
+    getEnrollmentInfo
 };

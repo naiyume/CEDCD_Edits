@@ -16,7 +16,7 @@ class DetailsTour extends Component{
 			fontSize: 12,
 			paddingLeft: 10
 		};
-		const containerStyle = {
+		let containerStyle = {
 			position:"fixed",
 			left:0,
 			top:0,
@@ -24,8 +24,24 @@ class DetailsTour extends Component{
 			width:"100%",
 			height:"100%",
 			backgroundColor:"rgba(0, 0, 0, .5)"
-			//scroll-snap-type: "both mandatory"
 		};
+		let offset = 0;
+		
+		if(document.getElementById("compareButton") && document.getElementById("compareButton").getBoundingClientRect().top > window.innerHeight){
+			offset = -1 * (document.getElementById("selectPage").getBoundingClientRect().height - window.innerHeight);
+		}
+		
+		if(this.props.tourStep == 3){
+			containerStyle = {
+				position:"fixed",
+				left:0,
+				top: offset,
+				zIndex:9,
+				width:"100%",
+				height:"2000%",
+				backgroundColor:"rgba(0, 0, 0, .5)"
+			};
+		}
 		const closeButton = (<button className="btn btn-primary pull-right tour-close" type="button">X</button>);
 		return (
 			<UserTour
@@ -42,14 +58,14 @@ class DetailsTour extends Component{
 	                selector: "#filter-panel",
 	                title: <div style={tourTitleStyle}>1 of 3</div>,
 	                body: <div style={tourMessageStyle}><b>Filter</b> the list of cohorts by applying a set of <b>specific criteria.</b> Each <b>category</b> can be <b>expanded by clicking on the subject header.</b>  After a selections are made, select <b>Apply Criteria,</b> to see the list of cohorts that match to the selections.</div>,
-	                position:"bottom"
+	                position:"top"
 	              },
 	              {
 	                step: 2,
 	                selector: "#cohortGridView",
 	                title: <div style={tourTitleStyle}>2 of 3</div>,
 	                body: <div style={tourMessageStyle}><b>Select one or more</b> cohorts <b>to compare Cohort Details</b> across cohorts. </div>,
-	                position:"left"
+	                position:"top"
 	              },
 	              {
 	                step: 3,
